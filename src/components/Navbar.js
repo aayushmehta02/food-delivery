@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     
-    <div>
+    <div className='top-top'>
         <nav className='top'>
             <ul className='nav' >
-                <li style={{textDecoration: 'none'}} >
+                <li style={{textDecoration: 'none'}} className='fasteats'>
                     
                 
-                <Link to='/' style={{textDecoration: 'none', font: 'Lemon'}}>FastEats</Link> 
+                <Link to='/' style={{textDecoration: 'none', }}>FastEats</Link> 
                 </li>
                 <li  >
                 <Link to='/' style={{textDecoration: 'none', fontSize: '1.5rem'}}>HOME</Link> 
