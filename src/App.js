@@ -1,13 +1,10 @@
 import './App.css';
-import Carousel from './components/Carousel';
-import Navbar from './components/Navbar';
+import Home from './screens/Home';
 function App() {
   return (
     <div className="App">
 
-      <Navbar/>
-      <Carousel/>
-      hello
+      <Home/>
     </div>
   );
 }

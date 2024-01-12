@@ -80,6 +80,11 @@ a{
 }
 
 .carouselimg{
-  width: 100%;
+  padding-top: 5%;
+  width: 75%;
   height: 70vh;
+}
+
+.css-1m9128y{
+  display: none;
 }
