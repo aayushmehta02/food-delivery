@@ -136,3 +136,118 @@ a{
   align-items: center;
   position: relative;
 }
+
+.login-form{
+  width: 90%;
+  height: 70vh;
+  color: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  
+  
+
+}
+.image_login{
+  object-fit: fill;
+  
+  opacity: 0.2;
+  z-index: -5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+}
+.login-form-wrapperr{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  
+ 
+  
+  
+}
+
+.login-fields{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+ 
+
+}
+
+.css-13r4j3i .MuiTextField-root{
+  width: 40vw !important;
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.buttons_wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.css-dgury2-MuiButtonBase-root-MuiButton-root, .css-lll1vm-MuiButtonBase-root-MuiButton-root{
+  width: 15vw !important;
+}
+@media (max-width:737px) {
+  .css-lll1vm-MuiButtonBase-root-MuiButton-root{
+    font-size: 0.5em !important;
+  }
+}
+@media (max-width: 426px ) {
+  .css-lll1vm-MuiButtonBase-root-MuiButton-root{
+    font-size: 0.2em !important;
+  }
+}
+
+.css-13r4j3i {
+  width: 20vw !important;
+}
+.signup-cover{
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+}
+
+.signup_button{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  transform: translate(-10%,0);
+}

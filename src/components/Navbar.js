@@ -19,8 +19,8 @@ export default function Navbar() {
                 
             </ul>
             <div className='login'>
-                <button className='log-in'>LOGIN</button>
-                <button className='sign-up'>SIGN UP</button>
+                <Link to='/login' className='log-in'>LOGIN</Link>
+                <Link to='/signup'><button className='sign-up'>SIGN UP</button></Link>
             </div>
             
         </nav>
