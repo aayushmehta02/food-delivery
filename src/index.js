@@ -4,8 +4,23 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+const express = require("express")
+const mongoose = require('mongoose')
+
+const cors = require("cors")
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+app.use(cors())
+
+
+mongoose.connect("mongodb://localhost:27017/client")
+app.listen(3001, ()=>{
+  console.log("server is running")
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -13,6 +28,7 @@ root.render(
     </BrowserRouter>
     
   </React.StrictMode>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

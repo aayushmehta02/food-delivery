@@ -1,17 +1,36 @@
 import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 export default function Login() {
-  
+  const[email, setEmail]=useState('')
+  const[password, setPassword]=useState('')
+  const handleError = (error) => {
+    console.error(error);
+  };
+  async function submit(e){
+    e.preventDefault();
+
+
+    try{
+      await axios.post("http://localhost:3000/login",{
+        email,password
+      });
+    }
+    catch(error){
+      handleError(error);
+    };
+  };
   return (
     <div>
     <Navbar/>
+    <h1>LOGIN</h1>
     <div className='login-form'>
       
-      <form style={{width: '50vw'}}>
+      <form style={{width: '50vw'}} action='POST'>
       <div className='login-form-wrapper'>
         <img src='https://howtostartanllc.com/images/business-ideas/business-idea-images/fast-food.jpg' className='image_login'/>
         <Box component="form" sx={{
@@ -20,7 +39,7 @@ export default function Login() {
       autoComplete="on">
                 <div className='login-fields'>
                   <TextField
-                    
+                    onChange={(e)=>(setEmail(e.target.value)) }
                     id="outlined-login-input"
                     label="Email"
                     defaultValue=""
@@ -47,6 +66,7 @@ export default function Login() {
                     }}/>
               
                   <TextField
+                    onChange={(e)=>(setPassword(e.target.value))}
                     id="outlined-password-input"
                     label="Password"
                     type="password"
@@ -73,7 +93,8 @@ export default function Login() {
          </Box>
          <div className='buttons'>
           <div className='buttons_wrapper'>
-          <Button type="submit" variant="contained" color="primary" sx={{ mt: 2, width: '10%', '@media (max-width: 600px)': { width: '1em' }}}>
+          <Button type="submit" variant="contained" color="primary" sx={{ mt: 2, width: '10%', '@media (max-width: 600px)': { width: '1em' }}}
+          onClick={submit}>
         Login
         </Button>
         <Link to='/signup'>

@@ -1,13 +1,27 @@
 import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 export default function Signup() {
+
+    const[email, setEmail]=useState('')
+    const[password, setPassword]=useState('')
+    const[firstName, setFirstName]=useState('')
+    const[lastName, setLastName] = useState('')
+    const[phoneNUmber, setPhoneNumber]=useState('')
+   const handleSubmit = (e) =>{
+    e.preventDefault();
+    axios.post('',{firstName, lastName, email,password})
+    .then(result=>console.log(result))
+    .catch(err=>console.log(err))
+   }
   return (
     <div>
         <Navbar/>
         <div className='signup-cover'>
+        <form action='POST' onSubmit={handleSubmit}>
         <Box
       component="form"
       sx={{
@@ -17,7 +31,7 @@ export default function Signup() {
       autoComplete="off">
       <div>
       <TextField
-                    
+                    onChange={(e)=>{setFirstName(e.target.value)}}
                     id="outlined-first_name-input"
                     label="First Name"
                     defaultValue=""
@@ -43,7 +57,7 @@ export default function Signup() {
                       },
                     }}/>
                     <TextField
-                    
+                    onChange={(e)=>{setLastName(e.target.value)}}
                     id="outlined-last_name-input"
                     label="Last Name"
                     defaultValue=""
@@ -72,6 +86,7 @@ export default function Signup() {
        
         
         <TextField
+        onChange={(e)=>{setPhoneNumber(e.target.value)}}
           id="outlined-number"
           label="Phone Number"
           type="number"
@@ -102,7 +117,7 @@ export default function Signup() {
         
        
                   <TextField
-                    
+                  onChange={(e)=>{setEmail(e.target.value)}}
                     id="outlined-login-input"
                     label="Email"
                     defaultValue=""
@@ -129,6 +144,7 @@ export default function Signup() {
                     }}/>
               
                   <TextField
+                    onChange={(e)=>{setPassword(e.target.value)}}
                     id="outlined-password-input"
                     label="Password"
                     type="password"
@@ -162,7 +178,7 @@ export default function Signup() {
         SIGN UP
         </Button>
       </div>
-      
+      </form>
       </div>
     </div>
   )

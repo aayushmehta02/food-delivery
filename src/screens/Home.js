@@ -6,7 +6,7 @@ export default function Home() {
     <div>
         <Navbar/>
         <Carouselllll/>
-        
+         <h1 style={{color: 'white'}}>HELLO {location.this.state.first}</h1>
     </div>
   )
 }

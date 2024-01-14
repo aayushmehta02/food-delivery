@@ -230,8 +230,8 @@ a{
   }
 }
 
-.css-13r4j3i {
-  width: 20vw !important;
+label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  width: 20%;
 }
 .signup-cover{
   width: 50vw;
